@@ -1,0 +1,15 @@
+{
+	"modules": {
+		"urbanairship": {
+			"config": {
+				"developmentAppKey": "DpzYavncQMKl_W4zVT8Idg",
+				"developmentAppSecret": "uOU34SsvTq6XDQCcst9_BA",
+				"gcmSender": "56216278889",
+				"inProduction": false,
+				"developmentLogLevel": "3",
+				"productionLogLevel": "6"
+			},
+			"version": "example"
+		}
+	}
+}
