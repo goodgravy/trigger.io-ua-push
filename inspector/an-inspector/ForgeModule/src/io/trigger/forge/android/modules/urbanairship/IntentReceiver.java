@@ -27,20 +27,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package io.trigger.forge.android.modules.urbanairship;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.os.RemoteException;
-import android.util.Log;
-
-import com.urbanairship.Logger;
-import com.urbanairship.UAirship;
-import com.urbanairship.location.UALocationManager;
-import com.urbanairship.push.PushManager;
-import com.urbanairship.util.ServiceNotBoundException;
-
 import io.trigger.forge.android.core.ForgeActivity;
-import io.trigger.forge.android.core.ForgeApp;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -48,9 +35,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class IntentReceiver extends BroadcastReceiver {
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.RemoteException;
 
-    private static final String logTag = "PushSample";
+import com.urbanairship.Logger;
+import com.urbanairship.UAirship;
+import com.urbanairship.location.UALocationManager;
+import com.urbanairship.push.PushManager;
+import com.urbanairship.util.ServiceNotBoundException;
+
+public class IntentReceiver extends BroadcastReceiver {
 
     public static String APID_UPDATED_ACTION_SUFFIX = ".apid.updated";
 

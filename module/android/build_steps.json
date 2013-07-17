@@ -61,7 +61,7 @@
 				"element": {
 					"tag": "permission",
 					"attributes": {
-						"android:name": "ODR_PACKAGE_TOKEN.permission.C2D_MESSAGE",
+						"android:name": "io.trigger.forge.android.inspector.permission.C2D_MESSAGE",
 						"android:protectionLevel": "signature"
 					}
 				}
@@ -112,7 +112,7 @@
 						}, {
 							"tag": "category",
 							"attributes": {
-								"android:name": "ODR_PACKAGE_TOKEN"
+								"android:name": "io.trigger.forge.android.inspector"
 							}
 						}]
 					}, {
@@ -192,11 +192,27 @@
 					"tag": "provider",
 					"attributes": {
 						"android:name": "com.urbanairship.UrbanAirshipProvider",
-						"android:authorities": "ODR_PACKAGE_TOKEN.urbanairship.provider",
+						"android:authorities": "io.trigger.forge.android.inspector.urbanairship.provider",
 						"android:exported": "false",
 						"android:multiprocess": "true"
 					}
 				}
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.urbanairship.config.airshipProperties}}",
+				"dest": "assets/airshipconfig.properties"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.urbanairship.config.locationProperties}}",
+				"dest": "assets/location.properties"
 			}
 		}
 	}
