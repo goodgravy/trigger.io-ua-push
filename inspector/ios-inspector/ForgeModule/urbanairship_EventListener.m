@@ -19,13 +19,6 @@
 // These are functions which will get called when certain native events happen.
 //
 
-
-+ (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// XXX NSRangeException when changing takeOff signature to drop ForgeTask !?
-	[ForgeLog i:@"############# taking off"];
-	[urbanairship_API takeOff:nil];
-}
-
 + (void)applicationWillTerminate:(UIApplication *)application {
     [UAirship land];
 }
