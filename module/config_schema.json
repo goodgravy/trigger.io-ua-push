@@ -2,47 +2,23 @@
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {
-		"developmentAppKey": {
-			"type": "string",
-			"required": true,
-			"description": "Urban Airship app key (development mode)"
-		},
-		"developmentAppSecret": {
-			"type": "string",
-			"required": true,
-			"description": "Urban Airship app secret (development mode)"
-		},
-		"productionAppKey": {
+		"airshipProperties": {
 			"type": "string",
 			"required": false,
-			"description": "Urban Airship app key (production mode)"
+			"description": "Your airshipconfig.properties file",
+			"_filepicker": true
 		},
-		"productionAppSecret": {
+		"locationProperties": {
 			"type": "string",
 			"required": false,
-			"description": "Urban Airship app key (production mode)"
+			"description": "Your location.properties file",
+			"_filepicker": true
 		},
-		"gcmSender": {
+		"airshipConfigPlist": {
 			"type": "string",
 			"required": false,
-			"description": "GCM Project Number, see https://code.google.com/apis/console/"
-		},
-		"inProduction": {
-			"type": "boolean",
-			"required": true,
-			"description": "Should your app use production mode push notifications?"
-		},
-		"developmentLogLevel": {
-			"type": "string",
-			"required": true,
-			"description": "2 ≤ n ≤ 7: logging verbosity in development mode. Lower is more verbose",
-			"pattern": "[2-7]"
-		},
-		"productionLogLevel": {
-			"type": "string",
-			"required": true,
-			"description": "2 ≤ n ≤ 7: logging verbosity in production mode. Lower is more verbose",
-			"pattern": "[2-7]"
+			"description": "Your AirshipConfig.plist file",
+			"_filepicker": true
 		}
 	}
 }

@@ -17,24 +17,23 @@
 
 
 
-+(void)takeOff:(ForgeTask*)command {
-    
++(void)takeOff:(ForgeTask*) command {
     
     //Create Airship options directory and add the required UIApplication launchOptions
     NSMutableDictionary *takeOffOptions = [NSMutableDictionary dictionary];
     NSMutableDictionary *airshipConfigOptions = [NSMutableDictionary dictionary];
-  
+	
     [takeOffOptions setValue: [UAAppDelegateSurrogate shared].launchOptions forKey:UAirshipTakeOffOptionsLaunchOptionsKey];
     /*
      * this section can be enabled to override the text based config file
-    [takeOffOptions setValue:airshipConfigOptions forKey:UAirshipTakeOffOptionsAirshipConfigKey];
-    
-    // Set config values
-    [airshipConfigOptions setValue:@"xxxxxxxxx" forKey:@"DEVELOPMENT_APP_KEY"];
-    [airshipConfigOptions setValue:@"xxxxxxxxx" forKey:@"DEVELOPMENT_APP_SECRET"];
-    [airshipConfigOptions setValue:@"PRODUCTION_APP_KEY" forKey:@"PRODUCTION_APP_KEY"];
-    [airshipConfigOptions setValue:@"PRODUCTION_APP_SECRET" forKey:@"PRODUCTION_APP_SECRET"];
-    */
+	 [takeOffOptions setValue:airshipConfigOptions forKey:UAirshipTakeOffOptionsAirshipConfigKey];
+	 
+	 // Set config values
+	 [airshipConfigOptions setValue:@"xxxxxxxxx" forKey:@"DEVELOPMENT_APP_KEY"];
+	 [airshipConfigOptions setValue:@"xxxxxxxxx" forKey:@"DEVELOPMENT_APP_SECRET"];
+	 [airshipConfigOptions setValue:@"PRODUCTION_APP_KEY" forKey:@"PRODUCTION_APP_KEY"];
+	 [airshipConfigOptions setValue:@"PRODUCTION_APP_SECRET" forKey:@"PRODUCTION_APP_SECRET"];
+	 */
     // Call takeOff (which creates the UAirship singleton), passing in the launch options so the
     // library can properly record when the app i launched from a push notification. This call is
     // required.
@@ -216,14 +215,14 @@
     NSString *incomingAlert = @"";
     NSMutableDictionary *incomingExtras = [NSMutableDictionary dictionary];
     
-   
+	
     NSDictionary *launchOptions = [UAAppDelegateSurrogate shared].launchOptions;
     if ([[launchOptions allKeys]containsObject:@"UIApplicationLaunchOptionsRemoteNotificationKey"]) {
         NSDictionary *payload = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
         incomingAlert = [self alertForUserInfo:payload];
         [incomingExtras setDictionary:[self extrasForUserInfo:payload]];
     }
-  
+	
     
     NSMutableDictionary *returnDictionary = [NSMutableDictionary dictionary];
     

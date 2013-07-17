@@ -5,6 +5,7 @@
 #import "UAAppDelegateSurrogate.h"
 #import "UALocationService.h"
 #import "UA_SBJsonWriter.h"
+#import "urbanairship_API.h"
 
 @implementation urbanairship_EventListener
 
@@ -19,6 +20,11 @@
 //
 
 
++ (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	// XXX NSRangeException when changing takeOff signature to drop ForgeTask !?
+	[ForgeLog i:@"############# taking off"];
+	[urbanairship_API takeOff:nil];
+}
 
 + (void)applicationWillTerminate:(UIApplication *)application {
     [UAirship land];
@@ -26,13 +32,13 @@
 
 + (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Updates the device token and registers the token with UA
-    UALOG(@"PushNotificationPlugin: registered for remote notifications");
+    [ForgeLog i:@"PushNotificationPlugin: registered for remote notifications"];
     [[UAPush shared] registerDeviceToken:deviceToken];
     [self raiseRegistration:YES withpushID:[UAirship shared].deviceToken];
 }
 
 + (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *) error {
-    UALOG(@"PushNotificationPlugin: Failed To Register For Remote Notifications With Error: %@", error);
+	[ForgeLog e:[NSString stringWithFormat:@"PushNotificationPlugin: Failed To Register For Remote Notifications With Error: %@", error]];
     [self raiseRegistration:NO withpushID:@""];
 }
 
