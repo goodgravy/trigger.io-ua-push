@@ -1,24 +1,27 @@
 {
-	"type": "object",
-	"additionalProperties": false,
-	"properties": {
-		"airshipProperties": {
-			"type": "string",
-			"required": false,
-			"description": "Your airshipconfig.properties file",
-			"_filepicker": true
-		},
-		"locationProperties": {
-			"type": "string",
-			"required": false,
-			"description": "Your location.properties file",
-			"_filepicker": true
-		},
-		"airshipConfigPlist": {
-			"type": "string",
-			"required": false,
-			"description": "Your AirshipConfig.plist file",
-			"_filepicker": true
-		}
-	}
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+        "airshipProperties": {
+            "_filepicker": true,
+            "required": false,
+            "type": "string",
+            "description": "Your airshipconfig.properties file - see Urban Airship documentation for more information",
+            "title": "UA properties"
+        },
+        "locationProperties": {
+            "_filepicker": true,
+            "required": false,
+            "type": "string",
+            "description": "Your location.properties file - see Urban Airship documentation for more information",
+            "title": "Location properties"
+        },
+        "airshipConfigPlist": {
+            "_filepicker": true,
+            "required": false,
+            "type": "string",
+            "description": "Your AirshipConfig.plist file - see Urban Airship documentation for more information",
+            "title": "UA Plist"
+        }
+    }
 }
