@@ -1,7 +1,7 @@
 Push via Urban Airship
 ==================================
 
-This module allows you to send push notifications via [Urban Airship](http://urbanairship.com/) on iOS and Android.
+This module allows you to receive push notifications via [Urban Airship](http://urbanairship.com/) on iOS and Android.
 
 The full Urban Airship API is not yet supported: you can find out the current device's push ID and receive push notifications.
 
@@ -18,8 +18,6 @@ airshipConfigPlist
 
 ## API
 
-> ::Note:: You must ensure that push notifications have been activated and allowed on the device before receiving them: call `getPushID` first, because the user may need to allow remote notifications first.
-
 !method: forge.urbanairship.getPushID(success, error)
 !param: success `function(pushID)` invoked with the device's unique push ID
 !param: error `function(content)` called with details of the error if something goes wrong
@@ -29,5 +27,5 @@ airshipConfigPlist
 !method: forge.urbanairship.pushReceived.addListener(success, error)
 !param: success `function(message)` invoked whenever the device receives a push notification: `message` is a JSON object consisting of the notification's body
 !param: error `function(content)` called with details of the error if something goes wrong
-!description: Receive push notifications. Before using this API, you should ensure that push notifications are activated on the device by invoking `forge.urbanairship.getPushID` to prompt the user for permissions if necessary.
+!description: Listener for receiving push notifications: your callback will be invoked with a JavaScript object containing the contents of the push notification.
 !platforms: iOS, Android

@@ -6,21 +6,21 @@
             "_filepicker": true,
             "required": false,
             "type": "string",
-            "description": "Your airshipconfig.properties file - see Urban Airship documentation for more information",
+            "description": "Your airshipconfig.properties file - see the documentation for more information",
             "title": "UA properties"
         },
         "locationProperties": {
             "_filepicker": true,
             "required": false,
             "type": "string",
-            "description": "Your location.properties file - see Urban Airship documentation for more information",
+            "description": "Your location.properties file - see the documentation for more information",
             "title": "Location properties"
         },
         "airshipConfigPlist": {
             "_filepicker": true,
             "required": false,
             "type": "string",
-            "description": "Your AirshipConfig.plist file - see Urban Airship documentation for more information",
+            "description": "Your AirshipConfig.plist file - see the documentation for more information",
             "title": "UA Plist"
         }
     }

@@ -14,10 +14,9 @@
 // These are functions which will get called when certain native events happen.
 //
 
-//
-// Here you can implement event listeners.
-// These are functions which will get called when certain native events happen.
-//
++ (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	[urbanairship_API takeOff:nil];
+}
 
 + (void)applicationWillTerminate:(UIApplication *)application {
     [UAirship land];
@@ -45,7 +44,8 @@
     NSMutableDictionary *extras = [self extrasForUserInfo:userInfo];
     
     NSString *json = [self raisePush:alert withExtras:extras];
-    [[ForgeApp sharedApp] event:@"urbanairship.pushReceived" withParam:json];
+	
+    [[ForgeApp sharedApp] event:@"urbanairship.pushReceived" withParam:[json objectFromJSONString]];
 }
 
 
