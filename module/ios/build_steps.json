@@ -112,13 +112,5 @@
             "framework": "MapKit.framework"
         }
     }
-},
-{
-    "do": {
-        "copy_file_from_src": {
-            "filename": "{{modules.urbanairship.config.airshipConfigPlist}}",
-            "dest": "ForgeModule/AirshipConfig.plist"
-        }
-    }
 }
 ]

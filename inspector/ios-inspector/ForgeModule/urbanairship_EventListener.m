@@ -18,10 +18,6 @@
 	[urbanairship_API takeOff:nil];
 }
 
-+ (void)applicationWillTerminate:(UIApplication *)application {
-    [UAirship land];
-}
-
 + (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Updates the device token and registers the token with UA
     [ForgeLog i:@"PushNotificationPlugin: registered for remote notifications"];
