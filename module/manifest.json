@@ -1,6 +1,6 @@
 {
 	"platform_version": "v2.0.0",
 	"version": "2.0",
-	"description": "Receive push notifications via [Urban Airship](http://urbanairship.com/) on iOS and Android.\n\nhttps://github.com/Ansr-io/trigger.io-ua-push.",
+	"description": "Receive push notifications via Urban Airship on iOS and Android.\n\nhttps://github.com/Ansr-io/trigger.io-ua-push.",
 	"name": "urbanairship"
 }
